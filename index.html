@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best Fast Food Restaurant - Order delicious burgers, pizzas, fries, wraps & drinks online. Fast delivery, great deals, quality food. Order now!">
+    <meta name="keywords" content="fast food, burgers, pizza, fries, restaurant, food delivery, takeaway, online order, best burgers near me">
+    <meta name="author" content="Tasty Bites Fast Food">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tastybites.com/">
+    <meta property="og:title" content="Tasty Bites - Premium Fast Food Restaurant | Order Now">
+    <meta property="og:description" content="Craving delicious burgers, pizzas, and more? Order from Tasty Bites - Your favorite fast food destination. Fast delivery & amazing deals!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tastybites.com/">
+    <meta property="twitter:title" content="Tasty Bites - Premium Fast Food Restaurant | Order Now">
+    <meta property="twitter:description" content="Craving delicious burgers, pizzas, and more? Order from Tasty Bites - Your favorite fast food destination. Fast delivery & amazing deals!">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38">
+    
+    <title>Tasty Bites - Best Fast Food Restaurant | Burgers, Pizza, Fries & More</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Tasty Bites Fast Food",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
+      "description": "Premium fast food restaurant offering burgers, pizzas, fries, wraps, and drinks with delivery and takeaway options.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Food Street",
+        "addressLocality": "Downtown",
+        "addressRegion": "CA",
+        "postalCode": "90001",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.0522,
+        "longitude": -118.2437
+      },
+      "url": "https://tastybites.com",
+      "telephone": "+1-555-123-4567",
+      "servesCuisine": "Fast Food, American, Italian",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "10:00",
+          "closes": "23:00"
+        }
+      ],
+      "menu": "https://tastybites.com/#menu",
+      "acceptsReservations": "True"
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #f97316;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ea580c;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.6s ease-out forwards;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Hero Background */
+        .hero-bg {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        /* Card Hover Effects */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+        }
+        
+        /* Cart Badge */
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Dark Mode Toggle */
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        .dark-mode .bg-white {
+            background-color: #2d2d2d !important;
+        }
+        
+        .dark-mode .text-gray-800 {
+            color: #ffffff !important;
+        }
+        
+        .dark-mode .text-gray-600 {
+            color: #d1d5db !important;
+        }
+        
+        /* Image Loading */
+        .menu-img {
+            min-height: 200px;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            display: flex;
+            gap: 10px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .breadcrumb a {
+            color: #f97316;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-burger text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-800">Tasty Bites</h1>
+                        <p class="text-xs text-orange-500">Fast & Delicious</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-orange-500 font-medium transition">Home</a>
+                    <a href="#menu" class="text-gray-700 hover:text-orange-500 font-medium transition">Menu</a>
+                    <a href="#deals" class="text-gray-700 hover:text-orange-500 font-medium transition">Deals</a>
+                    <a href="#about" class="text-gray-700 hover:text-orange-500 font-medium transition">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-orange-500 font-medium transition">Contact</a>
+                </div>
+                
+                <!-- Right Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="darkModeToggle" class="text-gray-700 hover:text-orange-500 transition">
+                        <i class="fas fa-moon text-xl"></i>
+                    </button>
+                    
+                    <!-- Cart -->
+                    <button id="cartToggle" class="relative text-gray-700 hover:text-orange-500 transition">
+                        <i class="fas fa-shopping-cart text-2xl"></i>
+                        <span id="cartCount" class="cart-badge">0</span>
+                    </button>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobileMenuToggle" class="md:hidden text-gray-700">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-64 h-full bg-white shadow-2xl z-50 p-6 md:hidden">
+            <button id="closeMobileMenu" class="absolute top-4 right-4 text-gray-700">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="flex flex-col space-y-6 mt-12">
+                <a href="#home" class="text-gray-700 hover:text-orange-500 font-medium transition mobile-menu-link">Home</a>
+                <a href="#menu" class="text-gray-700 hover:text-orange-500 font-medium transition mobile-menu-link">Menu</a>
+                <a href="#deals" class="text-gray-700 hover:text-orange-500 font-medium transition mobile-menu-link">Deals</a>
+                <a href="#about" class="text-gray-700 hover:text-orange-500 font-medium transition mobile-menu-link">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-orange-500 font-medium transition mobile-menu-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg relative min-h-screen flex items-center">
+        <div class="container mx-auto px-4 py-20 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white fade-in-up">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        Delicious Food<br>
+                        <span class="text-yellow-300">Delivered Fast</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-orange-100">
+                        Craving burgers, pizzas, or fries? We've got you covered with the best fast food in town. Order now and get it delivered hot & fresh!
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#menu" class="bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition transform hover:scale-105 shadow-2xl">
+                            Order Now
+                        </a>
+                        <a href="https://wa.me/15551234567?text=Hi!%20I%20want%20to%20order%20food" target="_blank" class="bg-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 transition transform hover:scale-105 shadow-2xl flex items-center">
+                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp Order
+                        </a>
+                    </div>
+                    <div class="mt-12 flex flex-wrap gap-8 text-sm">
+                        <div>
+                            <p class="text-yellow-300 font-bold text-2xl">30 Min</p>
+                            <p class="text-orange-100">Fast Delivery</p>
+                        </div>
+                        <div>
+                            <p class="text-yellow-300 font-bold text-2xl">1000+</p>
+                            <p class="text-orange-100">Happy Customers</p>
+                        </div>
+                        <div>
+                            <p class="text-yellow-300 font-bold text-2xl">50+</p>
+                            <p class="text-orange-100">Menu Items</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative slide-in-right">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=600&fit=crop" alt="Delicious burger and pizza from Tasty Bites restaurant" class="rounded-3xl shadow-2xl pulse-animation w-full">
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl">
+                        <p class="text-orange-600 font-bold text-3xl">20% OFF</p>
+                        <p class="text-gray-600 text-sm">First Order</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Items -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Popular Menu Items</h2>
+                <p class="text-gray-600">Our customers' favorite picks</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" alt="Classic beef burger with cheese and lettuce" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Classic Burger</h3>
+                        <p class="text-gray-600 mb-4">Juicy beef patty with fresh veggies & cheese</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-3xl font-bold text-orange-600">$8.99</span>
+                            <button onclick="addToCart('Classic Burger', 8.99)" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop" alt="Fresh pepperoni pizza with melted cheese" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Pepperoni Pizza</h3>
+                        <p class="text-gray-600 mb-4">Large pizza loaded with pepperoni & mozzarella</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-3xl font-bold text-orange-600">$12.99</span>
+                            <button onclick="addToCart('Pepperoni Pizza', 12.99)" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&h=300&fit=crop" alt="Crispy golden french fries" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Crispy Fries</h3>
+                        <p class="text-gray-600 mb-4">Golden crispy french fries with special seasoning</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-3xl font-bold text-orange-600">$3.99</span>
+                            <button onclick="addToCart('Crispy Fries', 3.99)" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Special Deals -->
+    <section id="deals" class="py-20 bg-gradient-to-br from-orange-50 to-yellow-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Special Deals & Combos</h2>
+                <p class="text-gray-600">Save more with our exclusive combo offers</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-orange-500 to-red-500 rounded-3xl p-8 text-white shadow-2xl card-hover">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h3 class="text-3xl font-bold mb-2">Family Feast</h3>
+                            <p class="text-orange-100 mb-4">2 Burgers + Large Pizza + 4 Drinks + Fries</p>
+                        </div>
+                        <div class="bg-white text-orange-600 rounded-2xl px-4 py-2 font-bold">
+                            Save $15
+                        </div>
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <div>
+                            <p class="text-sm line-through text-orange-200">Was $45.99</p>
+                            <p class="text-5xl font-bold">$29.99</p>
+                        </div>
+                        <button onclick="addToCart('Family Feast Combo', 29.99)" class="bg-white text-orange-600 px-8 py-3 rounded-full font-bold hover:bg-yellow-300 transition">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl p-8 text-white shadow-2xl card-hover">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h3 class="text-3xl font-bold mb-2">Lunch Special</h3>
+                            <p class="text-purple-100 mb-4">Burger + Fries + Drink</p>
+                        </div>
+                        <div class="bg-white text-purple-600 rounded-2xl px-4 py-2 font-bold">
+                            Save $5
+                        </div>
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <div>
+                            <p class="text-sm line-through text-purple-200">Was $14.99</p>
+                            <p class="text-5xl font-bold">$9.99</p>
+                        </div>
+                        <button onclick="addToCart('Lunch Special Combo', 9.99)" class="bg-white text-purple-600 px-8 py-3 rounded-full font-bold hover:bg-yellow-300 transition">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Full Menu -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb mb-8">
+                <a href="#home">Home</a>
+                <span>/</span>
+                <span>Menu</span>
+            </div>
+            
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Complete Menu</h2>
+                <p class="text-gray-600">Browse our full selection of delicious items</p>
+            </div>
+            
+            <!-- Category Filters -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="filterMenu('all')" class="filter-btn active px-6 py-3 rounded-full font-semibold transition bg-orange-500 text-white">
+                    All Items
+                </button>
+                <button onclick="filterMenu('burgers')" class="filter-btn px-6 py-3 rounded-full font-semibold transition bg-gray-200 text-gray-700 hover:bg-orange-500 hover:text-white">
+                    <i class="fas fa-burger mr-2"></i>Burgers
+                </button>
+                <button onclick="filterMenu('pizza')" class="filter-btn px-6 py-3 rounded-full font-semibold transition bg-gray-200 text-gray-700 hover:bg-orange-500 hover:text-white">
+                    <i class="fas fa-pizza-slice mr-2"></i>Pizza
+                </button>
+                <button onclick="filterMenu('fries')" class="filter-btn px-6 py-3 rounded-full font-semibold transition bg-gray-200 text-gray-700 hover:bg-orange-500 hover:text-white">
+                    <i class="fas fa-french-fries mr-2"></i>Fries
+                </button>
+                <button onclick="filterMenu('wraps')" class="filter-btn px-6 py-3 rounded-full font-semibold transition bg-gray-200 text-gray-700 hover:bg-orange-500 hover:text-white">
+                    <i class="fas fa-bread-slice mr-2"></i>Wraps
+                </button>
+                <button onclick="filterMenu('drinks')" class="filter-btn px-6 py-3 rounded-full font-semibold transition bg-gray-200 text-gray-700 hover:bg-orange-500 hover:text-white">
+                    <i class="fas fa-glass-water mr-2"></i>Drinks
+                </button>
+            </div>
+            
+            <!-- Menu Grid -->
+            <div id="menuGrid" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Menu items will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Customer Reviews -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600">Real reviews from real people</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Best burgers in town! Fast delivery and always hot. Their special sauce is incredible!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            JD
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800">John Doe</p>
+                            <p class="text-sm text-gray-500">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Amazing pizza quality! The crust is perfect and they never skimp on toppings. Highly recommend!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            SM
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800">Sarah Miller</p>
+                            <p class="text-sm text-gray-500">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Great value for money! The combo deals are amazing. My family's favorite restaurant now!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            RJ
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800">Robert Johnson</p>
+                            <p class="text-sm text-gray-500">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb mb-8">
+                <a href="#home">Home</a>
+                <span>/</span>
+                <span>About Us</span>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Our Story</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Since 2015, Tasty Bites has been serving the community with delicious, high-quality fast food. What started as a small family business has grown into the neighborhood's favorite restaurant.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        We use only the freshest ingredients, prepare everything with love, and ensure every order meets our high standards. Our commitment to quality and customer satisfaction has made us a local favorite.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="bg-orange-50 rounded-xl p-6">
+                            <i class="fas fa-check-circle text-orange-500 text-3xl mb-3"></i>
+                            <h3 class="font-bold text-gray-800 mb-2">Fresh Ingredients</h3>
+                            <p class="text-sm text-gray-600">Only the best quality products</p>
+                        </div>
+                        <div class="bg-orange-50 rounded-xl p-6">
+                            <i class="fas fa-truck-fast text-orange-500 text-3xl mb-3"></i>
+                            <h3 class="font-bold text-gray-800 mb-2">Fast Delivery</h3>
+                            <p class="text-sm text-gray-600">Hot food within 30 minutes</p>
+                        </div>
+                        <div class="bg-orange-50 rounded-xl p-6">
+                            <i class="fas fa-shield-halved text-orange-500 text-3xl mb-3"></i>
+                            <h3 class="font-bold text-gray-800 mb-2">Food Safety</h3>
+                            <p class="text-sm text-gray-600">Highest hygiene standards</p>
+                        </div>
+                        <div class="bg-orange-50 rounded-xl p-6">
+                            <i class="fas fa-heart text-orange-500 text-3xl mb-3"></i>
+                            <h3 class="font-bold text-gray-800 mb-2">Made with Love</h3>
+                            <p class="text-sm text-gray-600">Every dish crafted with care</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=600&fit=crop" alt="Professional restaurant kitchen with chefs preparing food" class="rounded-3xl shadow-2xl w-full">
+                    <div class="absolute -bottom-6 -left-6 bg-orange-500 text-white rounded-2xl p-6 shadow-2xl">
+                        <p class="text-4xl font-bold">8+</p>
+                        <p class="text-sm">Years of Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb mb-8">
+                <a href="#home">Home</a>
+                <span>/</span>
+                <span>Contact</span>
+            </div>
+            
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <p class="text-gray-600">Have questions? We'd love to hear from you</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Your Name</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="+1 555 123 4567">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Message</label>
+                            <textarea required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-orange-500 text-white py-4 rounded-lg font-bold hover:bg-orange-600 transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-orange-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-800 mb-1">Phone</p>
+                                    <a href="tel:+15551234567" class="text-gray-600 hover:text-orange-500">+1 555 123 4567</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-orange-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-800 mb-1">Email</p>
+                                    <a href="mailto:info@tastybites.com" class="text-gray-600 hover:text-orange-500">info@tastybites.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-location-dot text-orange-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-800 mb-1">Address</p>
+                                    <p class="text-gray-600">123 Food Street, Downtown, CA 90001</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock text-orange-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-800 mb-1">Hours</p>
+                                    <p class="text-gray-600">Mon-Sun: 10:00 AM - 11:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 pt-8 border-t border-gray-200">
+                            <a href="https://wa.me/15551234567?text=Hi!%20I%20want%20to%20order%20food" target="_blank" class="flex items-center justify-center bg-green-500 text-white py-4 rounded-lg font-bold hover:bg-green-600 transition">
+                                <i class="fab fa-whatsapp text-2xl mr-3"></i>
+                                Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Google Maps -->
+                    <div class="bg-white rounded-2xl p-4 shadow-lg">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.741788613776!2d-118.24672368478577!3d34.052234780549145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0; border-radius: 12px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Tasty Bites Restaurant Location on Google Maps">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-burger text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Tasty Bites</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">Delicious fast food delivered to your door. Fresh, fast, and always tasty!</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-orange-500 transition">Home</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-orange-500 transition">Menu</a></li>
+                        <li><a href="#deals" class="text-gray-400 hover:text-orange-500 transition">Deals</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-orange-500 transition">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-orange-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Menu Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#menu" class="text-gray-400 hover:text-orange-500 transition">Burgers</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-orange-500 transition">Pizza</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-orange-500 transition">Fries</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-orange-500 transition">Wraps</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-orange-500 transition">Drinks</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe for exclusive deals and updates</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="flex-1 px-4 py-2 rounded-l-lg text-gray-900 focus:outline-none">
+                        <button type="submit" class="bg-orange-500 px-6 py-2 rounded-r-lg hover:bg-orange-600 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Tasty Bites Fast Food Restaurant. All rights reserved.</p>
+                <p class="mt-2">
+                    <a href="#" class="hover:text-orange-500 transition">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-orange-500 transition ml-2">Terms of Service</a> | 
+                    <a href="#" class="hover:text-orange-500 transition ml-2">Sitemap</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Shopping Cart Sidebar -->
+    <div id="cartSidebar" class="fixed top-0 right-0 w-full md:w-96 h-full bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
+        <div class="flex flex-col h-full">
+            <div class="bg-orange-500 text-white p-6 flex justify-between items-center">
+                <h3 class="text-2xl font-bold">Your Order</h3>
+                <button id="closeCart" class="text-white hover:text-gray-200">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <div id="cartItems" class="flex-1 overflow-y-auto p-6">
+                <p class="text-gray-500 text-center py-12">Your cart is empty</p>
+            </div>
+            
+            <div class="border-t border-gray-200 p-6 bg-gray-50">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-xl font-bold">Total:</span>
+                    <span id="cartTotal" class="text-3xl font-bold text-orange-600">$0.00</span>
+                </div>
+                <button id="checkoutBtn" class="w-full bg-orange-500 text-white py-4 rounded-lg font-bold hover:bg-orange-600 transition mb-3" disabled>
+                    Proceed to Checkout
+                </button>
+                <button id="whatsappOrderBtn" class="w-full bg-green-500 text-white py-4 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center" disabled>
+                    <i class="fab fa-whatsapp mr-2"></i> Order via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-screen overflow-y-auto">
+            <div class="bg-orange-500 text-white p-6 flex justify-between items-center rounded-t-2xl">
+                <h3 class="text-2xl font-bold">Complete Your Order</h3>
+                <button id="closeCheckout" class="text-white hover:text-gray-200">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <div class="p-6">
+                <form id="checkoutForm" class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Full Name *</label>
+                        <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="John Doe">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Phone Number *</label>
+                        <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="+1 555 123 4567">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Delivery Address *</label>
+                        <textarea required rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Enter your complete delivery address"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Special Instructions (Optional)</label>
+                        <textarea rows="2" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Any special requests or dietary requirements"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Payment Method *</label>
+                        <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            <option value="">Select payment method</option>
+                            <option value="cod">Cash on Delivery</option>
+                            <option value="card">Credit/Debit Card</option>
+                            <option value="online">Online Payment</option>
+                        </select>
+                    </div>
+                    
+                    <div class="bg-orange-50 rounded-lg p-4">
+                        <h4 class="font-bold text-gray-800 mb-3">Order Summary</h4>
+                        <div id="orderSummary" class="space-y-2 text-sm">
+                            <!-- Summary will be inserted here -->
+                        </div>
+                        <div class="border-t border-orange-200 mt-3 pt-3 flex justify-between items-center">
+                            <span class="font-bold text-gray-800">Total Amount:</span>
+                            <span id="checkoutTotal" class="text-2xl font-bold text-orange-600">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-orange-500 text-white py-4 rounded-lg font-bold hover:bg-orange-600 transition">
+                        Confirm Order
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-14 h-14 bg-orange-500 text-white rounded-full shadow-lg hover:bg-orange-600 transition transform translate-y-20 opacity-0 flex items-center justify-center">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <script>
+        // Menu Data
+        const menuData = {
+            burgers: [
+                { name: 'Classic Burger', price: 8.99, image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop', description: 'Juicy beef patty with lettuce, tomato, and cheese' },
+                { name: 'Cheese Burger', price: 9.99, image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=400&h=300&fit=crop', description: 'Double cheese, beef patty, special sauce' },
+                { name: 'Bacon Burger', price: 11.99, image: 'https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&h=300&fit=crop', description: 'Crispy bacon, beef patty, BBQ sauce' },
+                { name: 'Veggie Burger', price: 7.99, image: 'https://images.unsplash.com/photo-1520072959219-c595dc870360?w=400&h=300&fit=crop', description: 'Delicious plant-based patty with fresh veggies' },
+                { name: 'Spicy Chicken Burger', price: 9.49, image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=400&h=300&fit=crop', description: 'Spicy chicken breast, jalapeños, chipotle mayo' },
+                { name: 'Double Whopper', price: 13.99, image: 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=400&h=300&fit=crop', description: 'Two beef patties, double cheese, all the fixings' }
+            ],
+            pizza: [
+                { name: 'Pepperoni Pizza', price: 12.99, image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop', description: 'Classic pepperoni with mozzarella cheese' },
+                { name: 'Margherita Pizza', price: 10.99, image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop', description: 'Fresh tomatoes, basil, and mozzarella' },
+                { name: 'BBQ Chicken Pizza', price: 14.99, image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop', description: 'BBQ chicken, red onions, cilantro' },
+                { name: 'Veggie Supreme', price: 11.99, image: 'https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=400&h=300&fit=crop', description: 'Bell peppers, onions, mushrooms, olives' },
+                { name: 'Meat Lovers', price: 15.99, image: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=300&fit=crop', description: 'Pepperoni, sausage, ham, bacon' },
+                { name: 'Hawaiian Pizza', price: 12.99, image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&h=300&fit=crop', description: 'Ham, pineapple, mozzarella cheese' }
+            ],
+            fries: [
+                { name: 'Classic Fries', price: 3.99, image: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&h=300&fit=crop', description: 'Crispy golden french fries' },
+                { name: 'Cheese Fries', price: 5.99, image: 'https://images.unsplash.com/photo-1630431341973-02e1c6d3ee88?w=400&h=300&fit=crop', description: 'Fries loaded with melted cheese' },
+                { name: 'Chili Cheese Fries', price: 6.99, image: 'https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&h=300&fit=crop', description: 'Fries topped with chili and cheese' },
+                { name: 'Sweet Potato Fries', price: 4.99, image: 'https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&h=300&fit=crop', description: 'Crispy sweet potato fries' },
+                { name: 'Loaded Fries', price: 7.99, image: 'https://images.unsplash.com/photo-1631709497146-a239ef373cf1?w=400&h=300&fit=crop', description: 'Bacon, cheese, sour cream, green onions' },
+                { name: 'Garlic Parmesan Fries', price: 5.49, image: 'https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&h=300&fit=crop', description: 'Fries with garlic butter and parmesan' }
+            ],
+            wraps: [
+                { name: 'Chicken Caesar Wrap', price: 8.49, image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&h=300&fit=crop', description: 'Grilled chicken, romaine, caesar dressing' },
+                { name: 'BBQ Chicken Wrap', price: 8.99, image: 'https://images.unsplash.com/photo-1604467707321-70d5ac45adda?w=400&h=300&fit=crop', description: 'BBQ chicken, coleslaw, ranch dressing' },
+                { name: 'Veggie Wrap', price: 7.49, image: 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&h=300&fit=crop', description: 'Fresh vegetables, hummus, feta cheese' },
+                { name: 'Spicy Buffalo Wrap', price: 8.99, image: 'https://images.unsplash.com/photo-1599599810694-b5c59e8b59ef?w=400&h=300&fit=crop', description: 'Spicy chicken, lettuce, buffalo sauce' },
+                { name: 'Falafel Wrap', price: 7.99, image: 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=400&h=300&fit=crop', description: 'Crispy falafel, tahini, fresh veggies' },
+                { name: 'Steak & Cheese Wrap', price: 10.99, image: 'https://images.unsplash.com/photo-1590614621164-c57b3483c78d?w=400&h=300&fit=crop', description: 'Grilled steak, melted cheese, peppers' }
+            ],
+            drinks: [
+                { name: 'Coca Cola', price: 2.49, image: 'https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400&h=300&fit=crop', description: 'Classic Coca Cola (500ml)' },
+                { name: 'Fresh Orange Juice', price: 3.99, image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&h=300&fit=crop', description: 'Freshly squeezed orange juice' },
+                { name: 'Iced Coffee', price: 3.49, image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=400&h=300&fit=crop', description: 'Cold brew coffee with ice' },
+                { name: 'Milkshake', price: 4.99, image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&h=300&fit=crop', description: 'Chocolate, Vanilla, or Strawberry' },
+                { name: 'Lemonade', price: 2.99, image: 'https://images.unsplash.com/photo-1523677011781-c91d1bbe2f0f?w=400&h=300&fit=crop', description: 'Fresh homemade lemonade' },
+                { name: 'Bottled Water', price: 1.49, image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop', description: 'Pure mineral water (500ml)' }
+            ]
+        };
+
+        // Shopping Cart
+        let cart = [];
+
+        // Load Menu
+        function loadMenu(category = 'all') {
+            const menuGrid = document.getElementById('menuGrid');
+            menuGrid.innerHTML = '';
+            
+            let items = [];
+            if (category === 'all') {
+                Object.keys(menuData).forEach(cat => {
+                    items = items.concat(menuData[cat]);
+                });
+            } else {
+                items = menuData[category];
+            }
+            
+            items.forEach(item => {
+                const card = `
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover menu-item" data-category="${category}">
+                        <img src="${item.image}" alt="${item.name} - ${item.description}" class="w-full h-48 object-cover menu-img" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">${item.name}</h3>
+                            <p class="text-gray-600 text-sm mb-4">${item.description}</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-orange-600">$${item.price.toFixed(2)}</span>
+                                <button onclick='addToCart("${item.name}", ${item.price})' class="bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition text-sm font-semibold">
+                                    <i class="fas fa-plus mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                menuGrid.innerHTML += card;
+            });
+        }
+
+        // Filter Menu
+        function filterMenu(category) {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.classList.remove('active', 'bg-orange-500', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-700');
+            });
+            
+            event.target.classList.add('active', 'bg-orange-500', 'text-white');
+            event.target.classList.remove('bg-gray-200', 'text-gray-700');
+            
+            loadMenu(category);
+        }
+
+        // Add to Cart
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            
+            updateCart();
+            showNotification('Added to cart!');
+        }
+
+        // Remove from Cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        // Update Quantity
+        function updateQuantity(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) {
+                removeFromCart(index);
+            } else {
+                updateCart();
+            }
+        }
+
+        // Update Cart Display
+        function updateCart() {
+            const cartItems = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            const whatsappOrderBtn = document.getElementById('whatsappOrderBtn');
+            
+            let total = 0;
+            let itemCount = 0;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-gray-500 text-center py-12">Your cart is empty</p>';
+                checkoutBtn.disabled = true;
+                whatsappOrderBtn.disabled = true;
+            } else {
+                let html = '';
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    itemCount += item.quantity;
+                    
+                    html += `
+                        <div class="bg-gray-50 rounded-lg p-4 mb-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-semibold text-gray-800">${item.name}</h4>
+                                <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center space-x-3">
+                                    <button onclick="updateQuantity(${index}, -1)" class="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition">
+                                        <i class="fas fa-minus text-sm"></i>
+                                    </button>
+                                    <span class="font-semibold">${item.quantity}</span>
+                                    <button onclick="updateQuantity(${index}, 1)" class="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition">
+                                        <i class="fas fa-plus text-sm"></i>
+                                    </button>
+                                </div>
+                                <span class="font-bold text-orange-600">$${itemTotal.toFixed(2)}</span>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                cartItems.innerHTML = html;
+                checkoutBtn.disabled = false;
+                whatsappOrderBtn.disabled = false;
+            }
+            
+            cartCount.textContent = itemCount;
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+            document.getElementById('checkoutTotal').textContent = `$${total.toFixed(2)}`;
+            
+            updateOrderSummary();
+        }
+
+        // Update Order Summary
+        function updateOrderSummary() {
+            const orderSummary = document.getElementById('orderSummary');
+            let html = '';
+            
+            cart.forEach(item => {
+                html += `
+                    <div class="flex justify-between">
+                        <span>${item.name} x${item.quantity}</span>
+                        <span class="font-semibold">$${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                `;
+            });
+            
+            orderSummary.innerHTML = html;
+        }
+
+        // Show Notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-24 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 fade-in-up';
+            notification.innerHTML = `<i class="fas fa-check-circle mr-2"></i>${message}`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 2000);
+        }
+
+        // Toggle Cart Sidebar
+        function toggleCart() {
+            const cartSidebar = document.getElementById('cartSidebar');
+            cartSidebar.classList.toggle('translate-x-full');
+        }
+
+        // WhatsApp Order
+        function sendWhatsAppOrder() {
+            let message = 'Hi! I want to order:\n\n';
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                message += `${item.name} x${item.quantity} - $${itemTotal.toFixed(2)}\n`;
+            });
+            
+            message += `\nTotal: $${total.toFixed(2)}`;
+            
+            const whatsappUrl = `https://wa.me/15551234567?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.add('active');
+        });
+
+        document.getElementById('closeMobileMenu').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.remove('active');
+        });
+
+        document.querySelectorAll('.mobile-menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.remove('active');
+            });
+        });
+
+        // Cart Toggle
+        document.getElementById('cartToggle').addEventListener('click', toggleCart);
+        document.getElementById('closeCart').addEventListener('click', toggleCart);
+
+        // Checkout Modal
+        document.getElementById('checkoutBtn').addEventListener('click', () => {
+            document.getElementById('checkoutModal').classList.remove('hidden');
+            document.getElementById('checkoutModal').classList.add('flex');
+        });
+
+        document.getElementById('closeCheckout').addEventListener('click', () => {
+            document.getElementById('checkoutModal').classList.add('hidden');
+            document.getElementById('checkoutModal').classList.remove('flex');
+        });
+
+        // WhatsApp Order Button
+        document.getElementById('whatsappOrderBtn').addEventListener('click', sendWhatsAppOrder);
+
+        // Checkout Form
+        document.getElementById('checkoutForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            showNotification('Order placed successfully! We\'ll contact you shortly.');
+            cart = [];
+            updateCart();
+            document.getElementById('checkoutModal').classList.add('hidden');
+            toggleCart();
+        });
+
+        // Contact Form
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            showNotification('Message sent! We\'ll get back to you soon.');
+            e.target.reset();
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.querySelector('#darkModeToggle i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+
+        // Back to Top
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.style.transform = 'translateY(0)';
+                backToTop.style.opacity = '1';
+            } else {
+                backToTop.style.transform = 'translateY(20px)';
+                backToTop.style.opacity = '0';
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadMenu('all');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
